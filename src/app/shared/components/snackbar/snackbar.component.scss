@@ -1,0 +1,25 @@
+.snackbar {
+  position: fixed;
+  top: 6px;
+  right: 6px;
+  min-width: 250px;
+  font-weight: 500;
+  color: #fff;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+  &--success {
+    background-color: #4caf50;
+  }
+
+  &--error {
+    background-color: #f44336;
+  }
+
+  > .list {
+    > .item:not(:last-child) {
+      margin-bottom: 4px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<div class="modal-backdrop" *ngIf="showModal">
+
+  <div class="modal" [ngStyle]="{ 'max-width': maxWidth, 'height': height }">
+    <header class="header">
+      <div></div>
+      <h1 *ngIf="title" class="title">{{ title }}</h1>
+      <button class="btn__close" (click)="_closeModal()">X</button>
+    </header>
+
+    <div class="content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,54 @@
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+
+  @media (max-width: 640px) {
+    justify-content: center;
+  }
+
+  > .logo {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+  }
+
+  .list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    @media (max-width: 640px) {
+      justify-content: center;
+    }
+
+    > .item {
+      > .link {
+        color: #333;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+        opacity: .8;
+
+        &:hover,
+        &:focus {
+          color: #242424;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  > .username {
+    font-weight: bold;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,7 @@
+<div class="form__validations" *ngIf="hasErrors(field)">
+  <ng-container *ngFor="let errors of getErrors(field)">
+    <div *ngFor="let error of errors | keyvalue">
+      {{ error.value }}
+    </div>
+  </ng-container>
+</div>

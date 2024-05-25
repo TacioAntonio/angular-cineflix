@@ -1,0 +1,11 @@
+<nav class="navbar">
+  <img class="logo" src="assets/images/logo.png" alt="Cineflix" />
+
+  <ul class="list">
+    <li class="item"><a class="link" [routerLink]="['/home/', currentProfileId]">Home</a></li>
+    <li class="item"><a class="link" [routerLink]="['/my-movie-list/', currentProfileId]">My movie list</a></li>
+    <li class="item"><a class="link" routerLink="/profiles">Profiles</a></li>
+  </ul>
+
+  <div class="username">{{ currentProfileName }}</div>
+</nav>

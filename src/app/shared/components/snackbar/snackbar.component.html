@@ -1,0 +1,7 @@
+<div *ngIf="formStatus.length" class="snackbar snackbar--{{messageStatus}}">
+  <ul class="list">
+    @for (error of formStatus; track error) {
+      <li class="item">{{ error }}</li>
+    }
+  </ul>
+</div>
