@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="branding">
+    <a class="link" routerLink="/home">
+      <img class="logo" src="assets/images/logo.png" alt="Cineflix" />
+    </a>
+    <p class="logo__name">Cineflix</p>
+    <p class="slogan">Where Every Screen is an Adventure.</p>
+  </div>
+
+  <form class="form" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+    <h1 class="title">Sign In</h1>
+
+    <div class="input__group">
+      <input class="email" type="email" formControlName="email" placeholder="E-mail" />
+      <app-form-validations *ngIf="fieldErrorMessages('email')" [field]="this.formControls['email']"
+        [messages]="fieldErrorMessages('email')">
+      </app-form-validations>
+    </div>
+
+    <div class="input__group">
+      <input class="password" type="password" formControlName="password" placeholder="Password" />
+      <app-form-validations *ngIf="fieldErrorMessages('password')" [field]="this.formControls['password']"
+        [messages]="fieldErrorMessages('password')">
+      </app-form-validations>
+    </div>
+
+    <button class="btn btn__submit" type="submit" [disabled]="signInForm['invalid']">Sign In</button>
+    <a class="link" routerLink="/sign-up">Sign up</a>
+  </form>
+</div>
+
+<app-snackbar
+  [formStatus]="formStatus"
+  [messageStatus]="messageStatus"
+></app-snackbar>
