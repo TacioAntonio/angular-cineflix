@@ -1,0 +1,7 @@
+version: '3.9'
+services:
+  angular-cineflix:
+    image: angular-cineflix
+    build: .
+    ports:
+      - "4200:80"
