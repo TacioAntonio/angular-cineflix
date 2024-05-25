@@ -1,0 +1,218 @@
+.container {
+  height: 100vh;
+
+  > .movies__container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+
+    > .header {
+      display: flex;
+      justify-content: center;
+
+      > .btn__search {
+        background-color: #ab5ab6;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #9b4ba6;
+        }
+      }
+    }
+
+    > .section {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      > .movie__group {
+        margin-bottom: 2rem;
+
+        > .subtitle {
+          font-size: 1.5rem;
+          margin-bottom: 12px;
+          color: #ab5ab6;
+          font-weight: 500;
+        }
+
+        > .movie__list {
+          display: flex;
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          padding: 12px 0;
+          gap: 1rem;
+          animation: fadeIn 1s forwards;
+
+          &--loading {
+            justify-content: center;
+          }
+
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+
+          > .movie {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex: 0 0 auto;
+            width: 150px;
+            text-align: center;
+            cursor: pointer;
+
+            > .image {
+              width: 100%;
+              height: auto;
+              border-radius: 8px;
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+              transition: transform 0.2s, box-shadow 0.2s;
+
+              &:hover {
+                transform: scale(1.05);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+              }
+            }
+
+            > .title {
+              font-size: 1rem;
+              color: #555;
+              height: -webkit-fill-available;
+            }
+
+            > .btn__watchlist {
+              background-color: #007bff;
+              color: #ffffff;
+              border: none;
+              font-size: 16px;
+              cursor: pointer;
+              border-radius: 5px;
+              padding: 4px 6px;
+              transition: background-color 0.3s ease;
+
+              &:hover {
+                background-color: #0056b3;
+              }
+
+              &:focus {
+                outline: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.search__section {
+  padding: 12px;
+
+  > .search__group {
+    display: flex;
+    gap: 12px;
+
+    > .search__input {
+      margin-bottom: 12px;
+      width: 100%;
+      max-width: 150px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      transition: border-color 0.3s, box-shadow 0.3s, max-width 0.3s;
+
+      &:focus {
+        max-width: 100%;
+        outline: none;
+        border-color: #ab5ab6;
+        box-shadow: 0 0 5px rgba(171, 90, 182, 0.5);
+      }
+    }
+
+    > .btn__search {
+      height: 43px;
+      background-color: #ab5ab6;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #9b4ba6;
+      }
+    }
+  }
+
+  > .movie__list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 12px 0;
+    gap: 1rem;
+
+    > .movie {
+      flex: 0 0 auto;
+      width: 150px;
+      text-align: center;
+      cursor: pointer;
+
+      > .image {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s, box-shadow 0.2s;
+
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      > .title {
+        font-size: 1rem;
+        color: #555;
+      }
+
+      > .btn__watchlist {
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        padding: 4px 6px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    > .text {
+      color: gray;
+      font-weight: 500;
+      margin: 0 auto;
+    }
+  }
+}

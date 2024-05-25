@@ -1,0 +1,111 @@
+<div class="container">
+  <app-navbar />
+
+  <div class="movies__container">
+    <header class="header">
+      <button class="btn__search" (click)="toggleModalVisibility()">Seach Movies</button>
+    </header>
+
+    <section class="section">
+      @if(suggestedFilmes.length > 0) {
+        <div class="movie__group">
+          <h2 class="subtitle">Suggested films</h2>
+          @if(showLoading) {
+            <div class="movie__list movie__list--loading">
+              <app-loading
+                [customWidth]="'42px'"
+                [customHeight]="'42px'"
+              ></app-loading>
+            </div>
+          } @else {
+            <div class="movie__list">
+              @for (movie of suggestedFilmes; track movie; let  i = $index) {
+                <div class="movie">
+                  <img
+                    class="image"
+                    [src]="'http://image.tmdb.org/t/p/w200' + movie.poster_path"
+                    [alt]="movie.title"
+                  >
+                  <p class="title">{{movie.title}}</p>
+                  <button
+                    class="btn__watchlist"
+                    (click)="addMovieToWatchlist(movie)">Added watchlist</button>
+                </div>
+              }
+            </div>
+          }
+        </div>
+      }
+
+      @for (category of categoryNames; track category; let  i = $index) {
+        <div class="movie__group">
+          <h2 class="subtitle">{{ category }}</h2>
+          @if(showLoading) {
+            <div class="movie__list movie__list--loading">
+              <app-loading
+                [customWidth]="'42px'"
+                [customHeight]="'42px'"
+              ></app-loading>
+            </div>
+          } @else {
+            <div class="movie__list">
+                @for (movies of moviesByCategory[category]; track movies; let  i = $index) {
+                  <div class="movie">
+                    <img
+                      class="image"
+                      [src]="'http://image.tmdb.org/t/p/w200' + movies.poster_path"
+                      [alt]="movies.title"
+                    >
+                    <p class="title">{{movies.title}}</p>
+                    <button
+                      class="btn__watchlist"
+                      (click)="addMovieToWatchlist(movies)">Added watchlist</button>
+                  </div>
+                }
+            </div>
+          }
+        </div>
+      }
+    </section>
+  </div>
+</div>
+
+<app-base-modal
+  [title]="'Search movies'"
+  [showModal]="showSearchMovieModal"
+  (closeModal)="toggleModalVisibility()"
+  [maxWidth]="'500px'"
+>
+  <section class="search__section">
+    <div class="search__group">
+      <input
+        class="search__input"
+        [(ngModel)]="termToSearch"
+        placeholder="Search movies..."
+      />
+      <button class="btn__search" (click)="searchMovieByTerm()">Search</button>
+    </div>
+
+    <div class="movie__list">
+      @if(searchedMovies.length > 0) {
+        @for (movie of searchedMovies; track movie; let  i = $index) {
+          <div class="movie">
+            <img
+              class="image"
+              [src]="'http://image.tmdb.org/t/p/w200' + movie.poster_path"
+              [alt]="movie.title"
+            >
+            <p class="title">{{movie.title}}</p>
+          </div>
+        }
+      } @else {
+        <p class="text">No movies found.</p>
+      }
+    </div>
+  </section>
+</app-base-modal>
+
+<app-snackbar
+  [formStatus]="formStatus"
+  [messageStatus]="messageStatus"
+></app-snackbar>
