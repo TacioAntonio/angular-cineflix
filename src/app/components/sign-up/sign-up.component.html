@@ -1,0 +1,41 @@
+<div class="container">
+  <form class="form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <h1 class="title">Sign Up</h1>
+
+    <div class="input__group">
+      <input class="username" formControlName="username" placeholder="Username" />
+      <app-form-validations *ngIf="fieldErrorMessages('username')" [field]="this.formControls['username']"
+        [messages]="fieldErrorMessages('username')">
+      </app-form-validations>
+    </div>
+
+    <div class="input__group">
+      <input class="email" type="email" formControlName="email" placeholder="E-mail" />
+      <app-form-validations *ngIf="fieldErrorMessages('email')" [field]="this.formControls['email']"
+        [messages]="fieldErrorMessages('email')">
+      </app-form-validations>
+    </div>
+
+    <div class="input__group">
+      <input class="password" type="password" formControlName="password" placeholder="Password" />
+      <app-form-validations *ngIf="fieldErrorMessages('password')" [field]="this.formControls['password']"
+        [messages]="fieldErrorMessages('password')">
+      </app-form-validations>
+    </div>
+
+    <div class="input__group">
+      <input  class="birthdate" type="date" formControlName="birthdate" placeholder="Data de Nascimento" />
+      <app-form-validations *ngIf="fieldErrorMessages('birthdate')" [field]="this.formControls['birthdate']"
+        [messages]="fieldErrorMessages('birthdate')">
+      </app-form-validations>
+    </div>
+
+    <button class="btn btn__submit" type="submit" [disabled]="signUpForm['invalid']">Sign Up</button>
+    <a class="link" routerLink="/sign-in">Sign in</a>
+  </form>
+</div>
+
+<app-snackbar
+  [formStatus]="formStatus"
+  [messageStatus]="messageStatus"
+></app-snackbar>

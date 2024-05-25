@@ -1,0 +1,79 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  > .form {
+    display: flex;
+    flex-direction: column;
+
+    > .title {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #8a3aa6;
+      margin-bottom: 12px;
+    }
+
+    > .input__group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      > .username, .email, .password, .birthdate {
+        border: none;
+        border-bottom: 1px solid #383838;
+        padding: 4px;
+        font-size: 16px;
+        outline: none;
+        transition: border-bottom-color 0.3s ease;
+
+        &:focus {
+          border-bottom: 2px solid #ad5cb7;
+        }
+      }
+
+      > .birthdate {
+        color: #757575
+      }
+    }
+
+    > .btn {
+      cursor: pointer;
+
+      &__submit {
+        background-color: #ab5ab6;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        margin-top: 12px;
+
+        &:disabled {
+          opacity: .6;
+          cursor: not-allowed;
+        }
+
+        &:active {
+          background-color: #8a3d8c;
+        }
+      }
+    }
+
+    > .link {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      margin-top: 6px;
+
+      &:hover {
+        color: #0056b3;
+      }
+    }
+  }
+}
