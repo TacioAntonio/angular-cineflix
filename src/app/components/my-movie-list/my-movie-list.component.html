@@ -1,0 +1,24 @@
+<div class="container">
+  <app-navbar />
+
+  <section class="section">
+    <h1 class="title">My movie list</h1>
+
+    <div class="movie__list">
+      @for (movie of moviesToWatch; track movie; let i = $index) {
+      <div class="movie">
+        <img class="image" [src]="'http://image.tmdb.org/t/p/w200' + movie.poster_path" [alt]="movie.title">
+        <p class="title">{{movie.title}}</p>
+
+        @if(movie.already_watched) {
+        <button class="btn__watchlist btn__watchlist--unmark"
+          (click)="markMovieAsWatched(movie.id, movie.already_watched)">Unmark already watched</button>
+        } @else {
+        <button class="btn__watchlist" (click)="markMovieAsWatched(movie.id, movie.already_watched)">Already
+          watched</button>
+        }
+      </div>
+      }
+    </div>
+  </section>
+</div>
