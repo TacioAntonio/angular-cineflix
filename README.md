@@ -1,27 +1,47 @@
-# AngularCineflix
+# <div style="display: flex; gap: 6px"><img src="./images/logo.png" width="32" height="32"> <p style="color: #ab5ab6; font-size: 1.6rem;">Cineflix</p></div>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2.
+![image](images/application.gif)
+> A streaming application
 
-## Development server
+## Nest.js API
+URL to the Nest.js API repository:
+- [[Nest.js] cineflix](https://github.com/TacioAntonio/nestjs-cineflix)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Installation
+```sh
+$ git clone https://github.com/TacioAntonio/angular-cineflix
+$ cd angular-cineflix
+$ npm i
+```
 
-## Code scaffolding
+## Running locally
+```sh
+$ npm start
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Running on docker
+```sh
+$ docker-compose up
+```
 
 ## Running unit tests
+```sh
+$ npm run test
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Contribution
+Please read [CONTRIBUTING.md](https://github.com/TacioAntonio/angular-cineflix/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Running end-to-end tests
+## Versioning
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/TacioAntonio/angular-cineflix/tags).
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Authors
+| ![Tácio Antônio](https://avatars2.githubusercontent.com/u/44682965?s=150&=4)
+| -
+| [Tácio Antônio](https://github.com/TacioAntonio/)
 
-## Further help
+See also the list of [contributors](https://github.com/TacioAntonio/angular-cineflix/graphs/contributors) who participated in this project.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/TacioAntonio/angular-cineflix/blob/master/LICENSE.md) file for details.
+
