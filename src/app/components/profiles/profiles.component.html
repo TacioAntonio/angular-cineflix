@@ -1,0 +1,35 @@
+<div class="container">
+  @if(checkIfCanCreateProfile) {
+    <div class="create__profile" title="Create profile" (click)="toggleModalVisibility()">+</div>
+  }
+
+  @for (profile of profiles; track profile; let  i = $index) {
+    <a class="link" [routerLink]="['/home', profile.id]" (click)="currentProfile = profile">
+      <div class="profile">{{ profile.name }}</div>
+    </a>
+  }
+</div>
+
+<app-base-modal
+  [title]="'Create profile'"
+  [showModal]="showCreateProfile"
+  (closeModal)="toggleModalVisibility()"
+>
+  <form class="form" [formGroup]="createProfileForm" (ngSubmit)="onSubmit()">
+    <div class="input__group">
+      <input class="profilename" formControlName="profilename" placeholder="Profile name" />
+      <app-form-validations
+        *ngIf="fieldErrorMessages('profilename')"
+        [field]="this.formControls['profilename']"
+        [messages]="fieldErrorMessages('profilename')">
+      </app-form-validations>
+    </div>
+
+    <button class="btn btn__submit" type="submit" [disabled]="createProfileForm['invalid']">Create profile</button>
+  </form>
+</app-base-modal>
+
+<app-snackbar
+  [formStatus]="formStatus"
+  [messageStatus]="messageStatus"
+></app-snackbar>
