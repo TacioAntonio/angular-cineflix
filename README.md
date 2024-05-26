@@ -1,4 +1,4 @@
-# <div style="display: flex; gap: 6px"><img src="./images/logo.png" width="32" height="32"> <p style="color: #ab5ab6; font-size: 1.6rem;">Cineflix</p></div>
+# <img src="./images/logo.png" width="32" height="32"> Cineflix
 
 ![image](images/application.gif)
 > A streaming application
