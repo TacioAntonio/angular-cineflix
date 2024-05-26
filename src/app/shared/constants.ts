@@ -1,6 +1,6 @@
 export const  NUMBER_PROFILES_ALLOWED = 4;
 
-export const API_URL = 'http://localhost:3000';
+export const API_URL = 'https://nestjs-cineflix.onrender.com';
 
 export const CATEGORY_NAMES = [
   'Action',
