@@ -7,6 +7,7 @@ import { ProfilesComponent } from './components/profiles/profiles.component';
 import { MyMovieListComponent } from './components/my-movie-list/my-movie-list.component';
 import { AuthenticateGuard } from './shared/guards/authenticate.guard';
 import { Error404Component } from './core/components/error404/error404.component';
+import { AuthorizationGuard } from './shared/guards/authorization.guard';
 
 export const routes: Routes = [
   {
@@ -17,7 +18,10 @@ export const routes: Routes = [
   {
     path: 'home/:id',
     component: HomeComponent,
-    canActivate: [AuthenticateGuard]
+    canActivate: [
+      AuthenticateGuard,
+      AuthorizationGuard
+    ]
   },
   {
     path: 'profiles',
